@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMP Test</title>   
+    <title>CMP Test</title>  
+    <script 
+    type="application/javascript"
+    src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"
+>
+</script>
+    <script
+    id="usercentrics-cmp"
+    data-settings-id="mDaNsOpyAzHI57"
+    src="https://web.cmp.usercentrics.eu/ui/loader.js"
+>
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
@@ -12,14 +23,21 @@
         crossDomainConsentSharingIFrame: 'https://anyaegorova.github.io/cmp-test/cross-domain-bridge.html',
     };
 </script> 
-   <script id="usercentrics-sdp" data-settings-id="mDaNsOpyAzHI57"
-        src="https://app.usercentrics.eu/browser-ui/latest/loader.js" async></script>
+   
 <style>
     body{
         font-family: 'Rubik' ,sans-serif
     }
 </style>
-
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Rht7rBHuXW8" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
 </head>
 <body>
     <button onclick="handleCMPClick()">Social Network</button>
