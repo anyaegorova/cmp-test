@@ -9,7 +9,7 @@
     <link rel="preconnect" href="//api.usercentrics.eu">
     <link rel="preload" href="//app.usercentrics.eu/browser-ui/latest/loader.js" as="script">
 <!-- Google Tag Manager -->
-<!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -20,9 +20,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
     
     
-    <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="-gdTRIZo_c-A5W" data-tcf-enabled async></script>
+ 
     
+    <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="YEtuF_D1x4ZmHb" async></script>
     
+    <script>
+   window.addEventListener("ucEvent", function(e) {
+    // Only proceed if event exists, is a consent update, and is explicit
+    if (e.detail && e.detail.event === "consent_status" && e.detail.type.toLowerCase() === 'explicit') {
+
+        // Map GCM v2 keys directly to your CMP service names
+        var serviceMap = {
+            functionality_storage: 'Google Shmoogoogle',
+        };
+
+        // Build the consent update object dynamically
+        var consentUpdate = {};
+        Object.entries(serviceMap).forEach(([consentSignal, serviceName]) => {
+            if (serviceName && e.detail.hasOwnProperty(serviceName)) {
+                consentUpdate[consentSignal] = e.detail[serviceName] ? 'granted' : 'denied';
+            }
+        });
+
+        // Update Google Consent Mode if at least one category exists
+        if (Object.keys(consentUpdate).length > 0) {
+            gtag('consent', 'update', consentUpdate);
+        }
+
+    }
+});
+</script>
+
 
         
 </script>
