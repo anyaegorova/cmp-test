@@ -90,20 +90,82 @@ gtag('consent','default',{
 
         
 </script>
+<!-- Usercentrics Embedding Test Widget -->
+<div class="uc-embedding-container">
+  <div class="uc-embedding-wrapper">
+    <h3>We need your consent to load the %SERVICE_NAME% service!</h3>
+    <p class="description-text">
+      We use SERVICE_NAME to embed content that may collect data about your activity. 
+      Please review the details and accept the service to see this content.
+    </p>
+    <div class="uc-embedding-buttons">
+      <button class="uc-embedding-more-info">More information</button>
+      <button class="uc-embedding-accept">Accept</button>
+    </div>
+    <span class="uc-embedding-powered">Powered By Usercentrics</span>
+  </div>
+</div>
 
-                <script>
-  uc.setCustomTranslations({
-    en: {
-      POWERED_BY: ""
-    }
-  });
-</script>
-              <script>
-  console.log("STARTING custom translations")
-  console.log(JSON.stringify(uc))
-  uc.changeOverlayStyle('single-button')
-  uc.reloadOnOptIn("BJz7qNsdj-7")
-</script>
+<style>
+  .uc-embedding-container {
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: sans-serif;
+    margin: 20px auto;
+  }
+
+  .uc-embedding-wrapper h3 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .description-text {
+    font-size: 13px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .uc-embedding-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  /* ✅ Your custom CSS goes here — test overrides below */
+  .uc-embedding-container .uc-embedding-buttons .uc-embedding-more-info {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .uc-embedding-container .uc-embedding-buttons .uc-embedding-accept {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .uc-embedding-powered {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #aaa;
+  }
+</style>
+            
         
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
